@@ -29,6 +29,36 @@ const BannerImage = styled.img`
   opacity: ${(props) => (props.isActive ? 1 : 0)};
 `
 
+const ArrowButton = styled.button`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  padding: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  &:focus {
+    outline: none;
+  }
+`
+
+const LeftArrow = styled(ArrowButton)`
+  left: 10px;
+`
+
+const RightArrow = styled(ArrowButton)`
+  right: 10px;
+`
+
 const Buttons = styled.div`
   display: flex;
   justify-content: center;
@@ -67,6 +97,14 @@ export function WelcomeBanner() {
     return () => clearInterval(interval)
   }, [images.length])
 
+  const handleNextImage = () => {
+    setCurrentImage((prev) => (prev + 1) % images.length)
+  }
+
+  const handlePrevImage = () => {
+    setCurrentImage((prev) => (prev - 1 + images.length) % images.length)
+  }
+
   const copyInvite = () => {
     store.set({ userModal: true })
     if (!wallet.connected) {
@@ -80,6 +118,8 @@ export function WelcomeBanner() {
         {images.map((src, index) => (
           <BannerImage key={index} src={src} isActive={index === currentImage} />
         ))}
+        <LeftArrow onClick={handlePrevImage}>&#9664;</LeftArrow>
+        <RightArrow onClick={handleNextImage}>&#9654;</RightArrow>
       </Welcome>
       <Buttons>
         <button onClick={copyInvite}>💸 SOON</button>
