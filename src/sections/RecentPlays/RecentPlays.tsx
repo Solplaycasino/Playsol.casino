@@ -90,9 +90,6 @@ export default function RecentPlays() {
           </Recent>
         ),
       )}
-      <GambaUi.Button main onClick={() => window.open(`${EXPLORER_URL}/platform/${PLATFORM_CREATOR_ADDRESS.toString()}`)}>
-        🚀 Explorer
-      </GambaUi.Button>
     </Container>
   )
 }

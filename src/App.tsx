@@ -11,6 +11,7 @@ import Dashboard from './sections/Dashboard/Dashboard'
 import Game from './sections/Game/Game'
 import Header from './sections/Header'
 import RecentPlays from './sections/RecentPlays/RecentPlays'
+import Footer from './sections/footer'
 import Toasts from './sections/Toasts'
 import { MainWrapper, TosInner, TosWrapper } from './styles'
 
@@ -79,6 +80,7 @@ export default function App() {
         <h2 style={{ textAlign: 'center' }}>Recent Plays</h2>
         <RecentPlays />
       </MainWrapper>
+      <Footer />
     </>
   )
 }
