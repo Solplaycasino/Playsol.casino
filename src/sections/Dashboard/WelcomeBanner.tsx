@@ -29,23 +29,24 @@ const BannerImage = styled.img`
   opacity: ${(props) => (props.isActive ? 1 : 0)};
 `
 
+// Yeni Ok Butonu Tasarımı (Daireyi Kaldırdık)
 const ArrowButton = styled.button`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.4);  /* Daha yumuşak bir arka plan */
+  background: rgba(255, 255, 255, 0.4);  /* Soft bir arka plan rengi */
   border: none;
-  color: white;
-  padding: 10px;
-  font-size: 28px;
+  color: #ff5f6d;
+  padding: 15px 25px; /* Daha uzun ve ince bir ok tasarımı */
+  font-size: 30px;
   cursor: pointer;
-  border-radius: 50%;
   z-index: 10;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 
   &:hover {
-    background: rgba(255, 255, 255, 0.6); /* Hoverda daha açık bir renk */
-    color: #ff5f6d; /* Ok rengi değişecek */
+    background: rgba(255, 255, 255, 0.7); /* Hoverda daha açık bir renk */
+    color: #fff;
+    transform: scale(1.05); /* Hoverda buton büyür */
   }
 
   &:focus {
@@ -54,11 +55,11 @@ const ArrowButton = styled.button`
 `
 
 const LeftArrow = styled(ArrowButton)`
-  left: 10px;
+  left: 20px; /* Sol ok butonu konumunu ayarladık */
 `
 
 const RightArrow = styled(ArrowButton)`
-  right: 10px;
+  right: 20px; /* Sağ ok butonu konumunu ayarladık */
 `
 
 const Buttons = styled.div`
@@ -147,8 +148,8 @@ export function WelcomeBanner() {
         {images.map((src, index) => (
           <BannerImage key={index} src={src} isActive={index === currentImage} />
         ))}
-        <LeftArrow onClick={handlePrevImage}>&#9664;</LeftArrow>
-        <RightArrow onClick={handleNextImage}>&#9654;</RightArrow>
+        <LeftArrow onClick={handlePrevImage}>&#60;</LeftArrow>  {/* Sol ok simgesi */}
+        <RightArrow onClick={handleNextImage}>&#62;</RightArrow> {/* Sağ ok simgesi */}
       </Welcome>
       <Buttons>
         <ModernButton onClick={copyInvite}>
