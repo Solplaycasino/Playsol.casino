@@ -29,7 +29,7 @@ const BannerImage = styled.img`
   opacity: ${(props) => (props.isActive ? 1 : 0)};
 `
 
-// Modern Ok Butonu Tasarımı (Yalnızca Çentik, Animasyon ve Stil)
+// Modern Ok Butonu Tasarımı (Yalnızca Çentik, Sabit ve Şık)
 const ArrowButton = styled.button`
   position: absolute;
   top: 50%;
@@ -40,11 +40,10 @@ const ArrowButton = styled.button`
   font-size: 40px;
   cursor: pointer;
   z-index: 10;
-  transition: all 0.3s ease;
-
+  transition: color 0.3s ease, transform 0.3s ease;
+  
   &:hover {
-    color: #ff5f6d; /* Hoverda kırmızıya dönüş */
-    transform: translateY(-5px); /* Yalnızca ok simgesinde hafif yukarı kayma */
+    color: #ff5f6d; /* Hoverda renk değişimi */
   }
 
   &:focus {
@@ -53,11 +52,11 @@ const ArrowButton = styled.button`
 `
 
 const LeftArrow = styled(ArrowButton)`
-  left: 20px;
+  left: 20px; /* Sol ok butonu konumunu ayarladık */
 `
 
 const RightArrow = styled(ArrowButton)`
-  right: 20px;
+  right: 20px; /* Sağ ok butonu konumunu ayarladık */
 `
 
 const Buttons = styled.div`
