@@ -71,27 +71,28 @@ const Buttons = styled.div`
 `
 
 const ModernButton = styled.button`
-  padding: 15px 30px;
-  font-size: 16px;
-  font-weight: 600;
-  background: linear-gradient(45deg, #ff5f6d, #ffc371);
-  color: white;
-  border: none;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  background: transparent;
+  color: #fff;
+  border: 2px solid #ff5f6d;
   border-radius: 30px;
   cursor: pointer;
   outline: none;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease, transform 0.3s ease;
 
   &:hover {
+    background: #ff5f6d;
+    color: #fff;
     transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(255, 95, 109, 0.3);
   }
 
   &:active {
-    filter: brightness(1.2);
+    background: #ffc371;
+    color: #fff;
+    transform: translateY(1px);
   }
 
   &:before {
@@ -108,19 +109,6 @@ const ModernButton = styled.button`
 
   &:hover:before {
     opacity: 1;
-    animation: glow 1s linear infinite;
-  }
-
-  @keyframes glow {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.05);
-    }
-    100% {
-      transform: scale(1);
-    }
   }
 `;
 
