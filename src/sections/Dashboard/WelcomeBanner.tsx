@@ -66,33 +66,32 @@ const Buttons = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
   margin-top: 20px;
 `
 
-const StyledButton = styled.button`
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 8px;
+const ModernButton = styled.button`
+  padding: 15px 30px;
   font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
+  font-weight: 600;
   background: linear-gradient(45deg, #ff5f6d, #ffc371);
   color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.2s ease;
+  transition: all 0.3s ease;
 
   &:hover {
     transform: translateY(-3px);
-    box-shadow: 0px 8px 15px rgba(255, 95, 109, 0.4);
+    box-shadow: 0 8px 15px rgba(255, 95, 109, 0.3);
   }
 
   &:active {
-    filter: brightness(1.2); /* Tıklama anında parlaklık efekti */
+    filter: brightness(1.2);
   }
 
   &:before {
@@ -117,7 +116,7 @@ const StyledButton = styled.button`
       transform: scale(1);
     }
     50% {
-      transform: scale(1.1);
+      transform: scale(1.05);
     }
     100% {
       transform: scale(1);
@@ -165,15 +164,15 @@ export function WelcomeBanner() {
         <RightArrow onClick={handleNextImage}>&#9654;</RightArrow>
       </Welcome>
       <Buttons>
-        <StyledButton onClick={copyInvite}>
-          💸 <span>Connect Wallet</span>
-        </StyledButton>
-        <StyledButton onClick={() => window.open('', '_blank')}>
-          🚀 <span>Launch</span>
-        </StyledButton>
-        <StyledButton onClick={() => window.open('https://discord.gg/', '_blank')}>
-          💬 <span>Join Discord</span>
-        </StyledButton>
+        <ModernButton onClick={copyInvite}>
+          💸 Connect Wallet
+        </ModernButton>
+        <ModernButton onClick={() => window.open('', '_blank')}>
+          🚀 Launch
+        </ModernButton>
+        <ModernButton onClick={() => window.open('https://discord.gg/', '_blank')}>
+          💬 Join Discord
+        </ModernButton>
       </Buttons>
     </WelcomeContainer>
   )
