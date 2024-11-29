@@ -17,7 +17,8 @@ const Welcome = styled.div`
   filter: drop-shadow(0 4px 3px rgba(0, 0, 0, 0.07)) drop-shadow(0 2px 2px rgba(0, 0, 0, 0.06));
   height: 300px;
   width: 100%;
-  max-width: 800px;
+  max-width: 900px; /* Genişliği 100px artırdık */
+  margin-bottom: 20px;
 `
 
 const BannerImage = styled.img`
@@ -36,14 +37,16 @@ const ArrowButton = styled.button`
   background: rgba(0, 0, 0, 0.5);
   border: none;
   color: white;
-  padding: 10px;
-  font-size: 24px;
+  padding: 15px;
+  font-size: 30px;
   cursor: pointer;
   border-radius: 50%;
   z-index: 10;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 
   &:hover {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.8);
+    transform: scale(1.1);
   }
 
   &:focus {
