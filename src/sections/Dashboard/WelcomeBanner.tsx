@@ -17,7 +17,7 @@ const Welcome = styled.div`
   filter: drop-shadow(0 4px 3px rgba(0, 0, 0, 0.07)) drop-shadow(0 2px 2px rgba(0, 0, 0, 0.06));
   height: 300px;
   width: 100%;
-  max-width: 900px; /* Genişliği 100px artırdık */
+  max-width: 900px;
   margin-bottom: 20px;
 `
 
@@ -84,11 +84,15 @@ const StyledButton = styled.button`
   background: linear-gradient(45deg, #ff5f6d, #ffc371);
   color: white;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.2s ease;
 
   &:hover {
     transform: translateY(-3px);
     box-shadow: 0px 8px 15px rgba(255, 95, 109, 0.4);
+  }
+
+  &:active {
+    filter: brightness(1.2); /* Tıklama anında parlaklık efekti */
   }
 
   &:before {
