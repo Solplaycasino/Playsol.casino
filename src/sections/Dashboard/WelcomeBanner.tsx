@@ -29,21 +29,25 @@ const BannerImage = styled.img`
   opacity: ${(props) => (props.isActive ? 1 : 0)};
 `
 
-// Yeni Ok Butonu Tasarımı (Çentik Sadece, Hoverda Kayma Yok)
+// Modern Ok Butonu Tasarımı (Beyaz Çentikler)
 const ArrowButton = styled.button`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: transparent;  /* Butonun arka planı transparan oldu */
+  background: transparent;
   border: none;
-  color: #ff5f6d;
+  color: #fff;
   font-size: 30px;
   cursor: pointer;
   z-index: 10;
-  transition: color 0.3s ease;
-
+  transition: all 0.3s ease;
+  
+  // Gölgeleme ve yumuşak geçiş
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);  /* Butona derinlik ekliyoruz */
+  
   &:hover {
-    color: #fff; /* Hoverda sadece renk değişimi olacak */
+    color: #ff5f6d; /* Hoverda renk değişimi */
+    transform: scale(1.1); /* Hoverda hafif büyüme efekti */
   }
 
   &:focus {
@@ -52,11 +56,11 @@ const ArrowButton = styled.button`
 `
 
 const LeftArrow = styled(ArrowButton)`
-  left: 20px; /* Sol ok butonu konumunu ayarladık */
+  left: 20px;  /* Sol ok butonu konumunu ayarladık */
 `
 
 const RightArrow = styled(ArrowButton)`
-  right: 20px; /* Sağ ok butonu konumunu ayarladık */
+  right: 20px;  /* Sağ ok butonu konumunu ayarladık */
 `
 
 const Buttons = styled.div`
