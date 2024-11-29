@@ -33,61 +33,23 @@ const ArrowButton = styled.button`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(0, 0, 0, 0.5);
   border: none;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  font-size: 18px;
+  color: white;
+  padding: 10px;
+  font-size: 24px;
   cursor: pointer;
+  border-radius: 50%;
   z-index: 10;
-  transition: all 0.3s ease;
 
   &:hover {
-    background: rgba(255, 255, 255, 0.9);
-    transform: translateY(-50%) scale(1.1);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.7);
   }
 
   &:focus {
     outline: none;
   }
-
-  &::before {
-    content: ''; /* Ok işareti */
-    display: block;
-    border: solid black;
-    border-width: 0 3px 3px 0;
-    padding: 5px;
-    transform: rotate(${(props) => (props.direction === 'left' ? '135deg' : '-45deg')});
-  }
-`;
-
-const LeftArrow = styled(ArrowButton)`
-  left: 15px;
-`;
-
-const RightArrow = styled(ArrowButton)`
-  right: 15px;
-`;
-
-
-const LeftArrow = styled(ArrowButton)`
-  left: 15px;
-  &::before {
-    content: '\\276E';
-  }
-`;
-
-const RightArrow = styled(ArrowButton)`
-  right: 15px;
-  &::before {
-    content: '\\276F';
-  }
-`;
+`
 
 const LeftArrow = styled(ArrowButton)`
   left: 10px;
@@ -106,29 +68,19 @@ const Buttons = styled.div`
 
   & > button {
     border: none;
-    border-radius: 50px;
-    padding: 12px 25px;
-    background: linear-gradient(45deg, #ff7e5f, #feb47b);
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease-in-out;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
+    border-radius: 10px;
+    padding: 10px 20px;
+    background: #ffffffdf;
+    transition: background-color 0.2s ease;
+    color: black;
     cursor: pointer;
+    font-size: 16px;
 
     &:hover {
-      transform: translateY(-3px);
-      box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
-      background: linear-gradient(45deg, #feb47b, #ff7e5f);
-    }
-
-    &:focus {
-      outline: none;
-      box-shadow: 0 0 0 3px rgba(255, 126, 95, 0.5);
+      background: white;
     }
   }
-`;
-
+`
 
 export function WelcomeBanner() {
   const wallet = useWallet()
