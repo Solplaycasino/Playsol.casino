@@ -17,7 +17,7 @@ const Welcome = styled.div`
   filter: drop-shadow(0 4px 3px rgba(0, 0, 0, 0.07)) drop-shadow(0 2px 2px rgba(0, 0, 0, 0.06));
   height: 300px;
   width: 100%;
-  max-width: 900px;
+  max-width: 800px;
 `
 
 const BannerImage = styled.img`
@@ -65,22 +65,58 @@ const Buttons = styled.div`
   align-items: center;
   gap: 15px;
   margin-top: 20px;
+`
 
-  & > button {
-    border: none;
-    border-radius: 10px;
-    padding: 10px 20px;
-    background: #ffffffdf;
-    transition: background-color 0.2s ease;
-    color: black;
-    cursor: pointer;
-    font-size: 16px;
+const StyledButton = styled.button`
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  background: linear-gradient(45deg, #ff5f6d, #ffc371);
+  color: white;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-    &:hover {
-      background: white;
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 8px 15px rgba(255, 95, 109, 0.4);
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover:before {
+    opacity: 1;
+    animation: glow 1s linear infinite;
+  }
+
+  @keyframes glow {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
     }
   }
-`
+`;
 
 export function WelcomeBanner() {
   const wallet = useWallet()
@@ -122,9 +158,15 @@ export function WelcomeBanner() {
         <RightArrow onClick={handleNextImage}>&#9654;</RightArrow>
       </Welcome>
       <Buttons>
-        <button onClick={copyInvite}>💸 SOON</button>
-        <button onClick={() => window.open('', '_blank')}>🚀 SOON</button>
-        <button onClick={() => window.open('https://discord.gg/', '_blank')}>💬 SOON</button>
+        <StyledButton onClick={copyInvite}>
+          💸 <span>Connect Wallet</span>
+        </StyledButton>
+        <StyledButton onClick={() => window.open('', '_blank')}>
+          🚀 <span>Launch</span>
+        </StyledButton>
+        <StyledButton onClick={() => window.open('https://discord.gg/', '_blank')}>
+          💬 <span>Join Discord</span>
+        </StyledButton>
       </Buttons>
     </WelcomeContainer>
   )
