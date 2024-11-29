@@ -34,19 +34,20 @@ const ArrowButton = styled.button`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.6);
   border: none;
-  color: white;
-  padding: 15px;
-  font-size: 30px;
+  color: #ff5f6d;
+  padding: 10px;
+  font-size: 28px;
   cursor: pointer;
   border-radius: 50%;
   z-index: 10;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
 
   &:hover {
-    background: rgba(0, 0, 0, 0.8);
-    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.9);
+    color: #fff;
+    transform: scale(1.15);
   }
 
   &:focus {
