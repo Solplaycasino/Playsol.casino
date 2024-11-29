@@ -14,10 +14,10 @@ const Welcome = styled.div`
   position: relative;
   overflow: hidden;
   border-radius: 10px;
-  filter: drop-shadow(0 4px 3px rgba(0, 0, 0, 0.07)) drop-shadow(0 2px 2px rgba(0, 0, 0, 0.06));
   height: 300px;
   width: 100%;
-  max-width: 800px;
+  max-width: 900px;
+  margin-bottom: 20px;
 `
 
 const BannerImage = styled.img`
@@ -29,21 +29,21 @@ const BannerImage = styled.img`
   opacity: ${(props) => (props.isActive ? 1 : 0)};
 `
 
+// Sol ve Sağ Oklar (Çentikler) - Banner İçinde
 const ArrowButton = styled.button`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
+  background: transparent;
   border: none;
-  color: white;
-  padding: 10px;
-  font-size: 24px;
+  color: #fff;
+  font-size: 40px;
   cursor: pointer;
-  border-radius: 50%;
   z-index: 10;
+  transition: color 0.3s ease;
 
   &:hover {
-    background: rgba(0, 0, 0, 0.7);
+    color: #ff5f6d; /* Hoverda renk değişimi */
   }
 
   &:focus {
@@ -52,40 +52,44 @@ const ArrowButton = styled.button`
 `
 
 const LeftArrow = styled(ArrowButton)`
-  left: 10px;
+  left: 10px; /* Banner içine yerleştirilen sol ok */
 `
 
 const RightArrow = styled(ArrowButton)`
-  right: 10px;
+  right: 10px; /* Banner içine yerleştirilen sağ ok */
 `
 
 const Buttons = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
   margin-top: 20px;
 `
 
-const StyledButton = styled.button`
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+const ModernButton = styled.button`
   padding: 12px 24px;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 14px;
+  font-weight: 500;
+  background: transparent;
+  color: #fff;
+  border: 2px solid #ff5f6d;
+  border-radius: 30px;
   cursor: pointer;
-  background: linear-gradient(45deg, #ff5f6d, #ffc371);
-  color: white;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  outline: none;
+  position: relative;
+  transition: all 0.3s ease, transform 0.3s ease;
 
   &:hover {
+    background: #ff5f6d;
+    color: #fff;
     transform: translateY(-3px);
-    box-shadow: 0px 8px 15px rgba(255, 95, 109, 0.4);
+  }
+
+  &:active {
+    background: #ffc371;
+    color: #fff;
+    transform: translateY(1px);
   }
 
   &:before {
@@ -102,19 +106,6 @@ const StyledButton = styled.button`
 
   &:hover:before {
     opacity: 1;
-    animation: glow 1s linear infinite;
-  }
-
-  @keyframes glow {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.1);
-    }
-    100% {
-      transform: scale(1);
-    }
   }
 `;
 
@@ -154,19 +145,19 @@ export function WelcomeBanner() {
         {images.map((src, index) => (
           <BannerImage key={index} src={src} isActive={index === currentImage} />
         ))}
-        <LeftArrow onClick={handlePrevImage}>&#9664;</LeftArrow>
-        <RightArrow onClick={handleNextImage}>&#9654;</RightArrow>
+        <LeftArrow onClick={handlePrevImage}>❮</LeftArrow>  {/* Sol ok simgesi */}
+        <RightArrow onClick={handleNextImage}>❯</RightArrow> {/* Sağ ok simgesi */}
       </Welcome>
       <Buttons>
-        <StyledButton onClick={copyInvite}>
-          💸 <span>Connect Wallet</span>
-        </StyledButton>
-        <StyledButton onClick={() => window.open('', '_blank')}>
-          🚀 <span>Launch</span>
-        </StyledButton>
-        <StyledButton onClick={() => window.open('https://discord.gg/', '_blank')}>
-          💬 <span>Join Discord</span>
-        </StyledButton>
+        <ModernButton onClick={copyInvite}>
+          💸 Connect Wallet
+        </ModernButton>
+        <ModernButton onClick={() => window.open('', '_blank')}>
+          🚀 Launch
+        </ModernButton>
+        <ModernButton onClick={() => window.open('https://discord.gg/', '_blank')}>
+          💬 Join Discord
+        </ModernButton>
       </Buttons>
     </WelcomeContainer>
   )

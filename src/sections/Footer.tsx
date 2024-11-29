@@ -8,19 +8,27 @@ const FooterContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  background: rgba(33, 34, 51, 0.9);
+  background: linear-gradient(180deg, #212233, #14151f);
   color: white;
   font-size: 14px;
   text-align: center;
   width: 100%;
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.3);
 `
 
 const FooterTop = styled.div`
   display: flex;
+  flex-direction: column;
   width: 100%;
-  max-width: 800px;
-  justify-content: space-between;
+  max-width: 900px;
+  justify-content: center;
   align-items: center;
+  gap: 20px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 `
 
 const FooterLogo = styled.div`
@@ -28,31 +36,52 @@ const FooterLogo = styled.div`
   align-items: center;
 
   & > img {
-    height: 30px;
+    height: 40px;
     margin-right: 10px;
   }
 `
 
 const FooterLinks = styled.div`
   display: flex;
+  flex-wrap: wrap;
   gap: 15px;
+  justify-content: center;
 
   & a {
     color: #03ffa4;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.2s;
+    transition: all 0.3s ease;
 
     &:hover {
       color: white;
+      text-shadow: 0 0 5px #03ffa4;
+    }
+  }
+`
+
+const ContactInfo = styled.div`
+  font-size: 12px;
+  margin-top: 10px;
+  color: #aaa;
+
+  & a {
+    color: #03ffa4;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: white;
+      text-shadow: 0 0 5px #03ffa4;
     }
   }
 `
 
 const FooterBottom = styled.div`
-  margin-top: 10px;
+  margin-top: 20px;
   font-size: 12px;
-  color: #999;
+  color: #666;
 `
 
 export default function Footer() {
@@ -63,13 +92,16 @@ export default function Footer() {
           <img src="/logo.svg" alt="Logo" />
         </FooterLogo>
         <FooterLinks>
-          <NavLink to="/">X</NavLink>
+          <NavLink to="/">Home</NavLink>
           <NavLink to="/website">Website</NavLink>
           <NavLink to="/buy-token">Buy Token</NavLink>
         </FooterLinks>
       </FooterTop>
+      <ContactInfo>
+        Contact us at: <a href="mailto:contact@solplay.casino">contact@solplay.casino</a>
+      </ContactInfo>
       <FooterBottom>
-        Made with love by _
+        Made with ❤️ by the Solplay team.
       </FooterBottom>
     </FooterContainer>
   )
