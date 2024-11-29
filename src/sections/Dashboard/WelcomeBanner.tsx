@@ -29,24 +29,21 @@ const BannerImage = styled.img`
   opacity: ${(props) => (props.isActive ? 1 : 0)};
 `
 
-// Yeni Ok Butonu Tasarımı (Daireyi Kaldırdık)
+// Yeni Ok Butonu Tasarımı (Çentik Sadece, Hoverda Kayma Yok)
 const ArrowButton = styled.button`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.4);  /* Soft bir arka plan rengi */
+  background: transparent;  /* Butonun arka planı transparan oldu */
   border: none;
   color: #ff5f6d;
-  padding: 15px 25px; /* Daha uzun ve ince bir ok tasarımı */
   font-size: 30px;
   cursor: pointer;
   z-index: 10;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: color 0.3s ease;
 
   &:hover {
-    background: rgba(255, 255, 255, 0.7); /* Hoverda daha açık bir renk */
-    color: #fff;
-    transform: scale(1.05); /* Hoverda buton büyür */
+    color: #fff; /* Hoverda sadece renk değişimi olacak */
   }
 
   &:focus {
@@ -148,8 +145,8 @@ export function WelcomeBanner() {
         {images.map((src, index) => (
           <BannerImage key={index} src={src} isActive={index === currentImage} />
         ))}
-        <LeftArrow onClick={handlePrevImage}>&#60;</LeftArrow>  {/* Sol ok simgesi */}
-        <RightArrow onClick={handleNextImage}>&#62;</RightArrow> {/* Sağ ok simgesi */}
+        <LeftArrow onClick={handlePrevImage}>❮</LeftArrow>  {/* Sol ok simgesi */}
+        <RightArrow onClick={handleNextImage}>❯</RightArrow> {/* Sağ ok simgesi */}
       </Welcome>
       <Buttons>
         <ModernButton onClick={copyInvite}>
