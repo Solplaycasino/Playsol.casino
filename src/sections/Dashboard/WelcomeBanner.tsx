@@ -14,7 +14,6 @@ const Welcome = styled.div`
   position: relative;
   overflow: hidden;
   border-radius: 10px;
-  filter: drop-shadow(0 4px 3px rgba(0, 0, 0, 0.07)) drop-shadow(0 2px 2px rgba(0, 0, 0, 0.06));
   height: 300px;
   width: 100%;
   max-width: 900px;
@@ -34,20 +33,19 @@ const ArrowButton = styled.button`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(0, 0, 0, 0.4);  /* Daha yumuşak bir arka plan */
   border: none;
-  color: #ff5f6d;
+  color: white;
   padding: 10px;
   font-size: 28px;
   cursor: pointer;
   border-radius: 50%;
   z-index: 10;
-  transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease;
 
   &:hover {
-    background: rgba(255, 255, 255, 0.9);
-    color: #fff;
-    transform: scale(1.15);
+    background: rgba(255, 255, 255, 0.6); /* Hoverda daha açık bir renk */
+    color: #ff5f6d; /* Ok rengi değişecek */
   }
 
   &:focus {
