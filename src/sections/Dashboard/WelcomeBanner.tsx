@@ -33,33 +33,47 @@ const ArrowButton = styled.button`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.7);
   border: none;
-  color: black;
   width: 50px;
   height: 50px;
-  font-size: 24px;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 50%;
-  z-index: 10;
-  transition: all 0.3s ease;
-
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
 
   &:hover {
-    background: rgba(255, 255, 255, 0.8);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.9);
     transform: translateY(-50%) scale(1.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
   }
 
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+  }
+
+  &::before {
+    content: ''; /* Ok işareti */
+    display: block;
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    padding: 5px;
+    transform: rotate(${(props) => (props.direction === 'left' ? '135deg' : '-45deg')});
   }
 `;
+
+const LeftArrow = styled(ArrowButton)`
+  left: 15px;
+`;
+
+const RightArrow = styled(ArrowButton)`
+  right: 15px;
+`;
+
 
 const LeftArrow = styled(ArrowButton)`
   left: 15px;
