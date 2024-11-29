@@ -29,7 +29,7 @@ const BannerImage = styled.img`
   opacity: ${(props) => (props.isActive ? 1 : 0)};
 `
 
-// Çentik Okları (Banner'ın Dışında)
+// Sol ve Sağ Oklar (Çentikler) - Banner İçinde
 const ArrowButton = styled.button`
   position: absolute;
   top: 50%;
@@ -52,11 +52,11 @@ const ArrowButton = styled.button`
 `
 
 const LeftArrow = styled(ArrowButton)`
-  left: -40px; /* Dışarıya yerleştirilen sol ok */
+  left: 10px; /* Banner içine yerleştirilen sol ok */
 `
 
 const RightArrow = styled(ArrowButton)`
-  right: -40px; /* Dışarıya yerleştirilen sağ ok */
+  right: 10px; /* Banner içine yerleştirilen sağ ok */
 `
 
 const Buttons = styled.div`
