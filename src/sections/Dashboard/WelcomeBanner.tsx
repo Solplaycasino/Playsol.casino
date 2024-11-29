@@ -68,19 +68,29 @@ const Buttons = styled.div`
 
   & > button {
     border: none;
-    border-radius: 10px;
-    padding: 10px 20px;
-    background: #ffffffdf;
-    transition: background-color 0.2s ease;
-    color: black;
-    cursor: pointer;
+    border-radius: 50px;
+    padding: 12px 25px;
+    background: linear-gradient(45deg, #ff7e5f, #feb47b);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    color: white;
     font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
 
     &:hover {
-      background: white;
+      transform: translateY(-3px);
+      box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+      background: linear-gradient(45deg, #feb47b, #ff7e5f);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(255, 126, 95, 0.5);
     }
   }
-`
+`;
+
 
 export function WelcomeBanner() {
   const wallet = useWallet()
