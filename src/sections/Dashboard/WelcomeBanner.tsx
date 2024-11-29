@@ -17,7 +17,7 @@ const Welcome = styled.div`
   filter: drop-shadow(0 4px 3px rgba(0, 0, 0, 0.07)) drop-shadow(0 2px 2px rgba(0, 0, 0, 0.06));
   height: 300px;
   width: 100%;
-  max-width: 800px;
+  max-width: 900px;
 `
 
 const BannerImage = styled.img`
