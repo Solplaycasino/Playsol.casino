@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { NavLink } from 'react-router-dom'
 
 const FooterContainer = styled.div`
   display: flex;
@@ -92,9 +91,9 @@ export default function Footer() {
           <img src="/logo.svg" alt="Logo" />
         </FooterLogo>
         <FooterLinks>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/website">Website</NavLink>
-          <NavLink to="/https://x.com/Solplaycasino">Twitter | 𝕏</NavLink>
+          <a href="/">Home</a>
+          <a href="/website">Website</a>
+          <a href="https://x.com/Solplaycasino" target="_blank" rel="noopener noreferrer">Twitter | 𝕏</a>
         </FooterLinks>
       </FooterTop>
       <ContactInfo>
