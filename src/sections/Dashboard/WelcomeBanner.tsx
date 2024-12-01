@@ -152,8 +152,8 @@ export function WelcomeBanner() {
         <ModernButton onClick={copyInvite}>
           💸 Invite Earn a 0.25% fee
         </ModernButton>
-        <ModernButton onClick={() => window.open('', '_blank')}>
-          💬 Twitter | 𝕏
+        <ModernButton onClick={() => window.open('https://x.com/Solplaycasino', '_blank')}>
+          💬 Twitter | 𝕏 
         </ModernButton>
         
       </Buttons>
