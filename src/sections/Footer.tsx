@@ -94,7 +94,7 @@ export default function Footer() {
         <FooterLinks>
           <NavLink to="/">Home</NavLink>
           <NavLink to="/website">Website</NavLink>
-          <NavLink to="/buy-token">Buy Token</NavLink>
+          <NavLink to="/https://x.com/Solplaycasino">Twitter | 𝕏</NavLink>
         </FooterLinks>
       </FooterTop>
       <ContactInfo>
