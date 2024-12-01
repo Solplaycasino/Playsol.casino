@@ -155,6 +155,9 @@ export function WelcomeBanner() {
         <ModernButton onClick={() => window.open('https://x.com/Solplaycasino', '_blank')}>
           💬 Twitter | 𝕏 
         </ModernButton>
+       <ModernButton onClick={() => window.open('https://t.me/solplaycasino', '_blank')}>
+          💬 Telegram 
+        </ModernButton>
         
       </Buttons>
     </WelcomeContainer>
