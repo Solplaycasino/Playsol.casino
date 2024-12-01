@@ -91,8 +91,8 @@ export default function Footer() {
           <img src="/logo.svg" alt="Logo" />
         </FooterLogo>
         <FooterLinks>
-          <a href="/">Home</a>
-          <a href="/website">Website</a>
+          <a href="https://www.solplay.casino/" target="_blank" rel="noopener noreferrer">Home</a>
+          <a href="https://www.solplay.casino/" target="_blank" rel="noopener noreferrer">Website</a>
           <a href="https://x.com/Solplaycasino" target="_blank" rel="noopener noreferrer">Twitter | 𝕏</a>
         </FooterLinks>
       </FooterTop>
