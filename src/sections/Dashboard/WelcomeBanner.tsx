@@ -150,14 +150,12 @@ export function WelcomeBanner() {
       </Welcome>
       <Buttons>
         <ModernButton onClick={copyInvite}>
-          💸 Connect Wallet
+          💸 Invite Earn a 0.25% fee
         </ModernButton>
         <ModernButton onClick={() => window.open('', '_blank')}>
-          🚀 Launch
+          💬 Twitter | 𝕏
         </ModernButton>
-        <ModernButton onClick={() => window.open('https://discord.gg/', '_blank')}>
-          💬 Join Discord
-        </ModernButton>
+        
       </Buttons>
     </WelcomeContainer>
   )
